@@ -28,4 +28,4 @@ Make sure you have the following installed on your system:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/your-repo.git
+      https://github.com/JosueFlores777/Scrapy.git
