@@ -1,6 +1,6 @@
 # Web Scraping Project
 
-This project is a web scraping script in Python that retrieves product information from different online stores, including Prado, Curacao, and Almacenes Tropigas.
+This project is a web scraping script in Python that retrieves product information from different online stores, including 3 store.
 
 ## Table of Contents
 
