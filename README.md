@@ -29,3 +29,7 @@ Make sure you have the following installed on your system:
 
    ```bash
       https://github.com/JosueFlores777/Scrapy.git
+
+## License
+Make sure to replace placeholders like `Josue Flores- BD24K` and `https://github.com/JosueFlores777` with your actual GitHub JosueFlores777 and repository Scrapy. 
+
