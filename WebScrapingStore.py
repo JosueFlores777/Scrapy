@@ -9,8 +9,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import NoSuchElementException
 
-
-start_time = time.time()
 product_info = []
 
 def SearchProducListPrado(product):
@@ -127,7 +125,7 @@ def FillEmptyProdut(n, store):
         product_info.append({"name": "none", "newPrice": "none", "oldPrice": "none", "store": store})
     return product_info
 
-#search = "televisor"
+#search = "lavadora"
 quantity = 3
 product_info = []
 store = " "
@@ -146,8 +144,3 @@ getContentTropigas(htmlTropigas, n=3)
 
 # Create JSON
 CreateJson(product_info)
-end_time = time.time()
-execution_time = end_time - start_time
-
-print(f"Total Execution Time: {execution_time} seconds")
-

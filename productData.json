@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Lavadora Automática Inverter Samsung 17KG WA17T6260BW/AP",
+    "newPrice": "$429.00",
+    "oldPrice": "$789.95",
+    "store": "Prado"
+  },
+  {
+    "name": "Lavadora Automática Mabe 22KG LMA72215CBAB0",
+    "newPrice": "$456.99",
+    "oldPrice": "$890.44",
+    "store": "Prado"
+  },
+  {
+    "name": "Lavadora Automática Frigidaire 22KG FWIB22M4EBGSW",
+    "newPrice": "$456.99",
+    "oldPrice": "$769.53",
+    "store": "Prado"
+  },
+  {
+    "name": "Lavadora LG WM25MV2S6W Frontal 25KG",
+    "oldPrice": "$1,560.00",
+    "newPrice": "$947.00",
+    "store": "Curacao"
+  },
+  {
+    "name": "Lavadora Mastertech MTA191CW 42 lb",
+    "oldPrice": "$570.00",
+    "newPrice": "$397.00",
+    "store": "Curacao"
+  },
+  {
+    "name": "Lavadora automática Mabe LMA72215WBAB 22kg",
+    "oldPrice": "$800.00",
+    "newPrice": "$457.00",
+    "store": "Curacao"
+  },
+  {
+    "name": "Lavadora Mastertech MTA191CW 42 lb",
+    "oldPrice": "$570.00",
+    "newPrice": "$397.00",
+    "store": "Almacenes Tropigas"
+  },
+  {
+    "name": "Lavadora LG  WM25WV2S6W 55 Libras",
+    "oldPrice": "$1,400.00",
+    "newPrice": "$947.00",
+    "store": "Almacenes Tropigas"
+  },
+  {
+    "name": "Lavadora LG WM25MV2S6W Frontal 25KG",
+    "oldPrice": "$1,560.00",
+    "newPrice": "$947.00",
+    "store": "Almacenes Tropigas"
+  }
+]
