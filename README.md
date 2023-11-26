@@ -1,6 +1,6 @@
 # Web Scraping Project
 
-This project is a web scraping script in Python that retrieves product information from different online stores, including 3 store.
+This project is a web scraping script in Python that retrieves product information from different online stores, including 3 stores.
 
 ## Table of Contents
 
@@ -14,7 +14,7 @@ This project is a web scraping script in Python that retrieves product informati
 
 ## Overview
 
-The script is designed to search for a given product on the websites of Prado, Curacao, and Almacenes Tropigas, extract relevant product details, and store the information in a JSON file.
+The script is designed to search for a given product on the websites of  3 stores, extract relevant product details, and store the information in a JSON file.
 
 ## Prerequisites
 
