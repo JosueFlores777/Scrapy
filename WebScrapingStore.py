@@ -1,7 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
 import urllib.parse
-import time
 import json
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -14,9 +13,27 @@ product_info = []
 def SearchProducListPrado(product):
     productSearch = urllib.parse.quote(product)
     url = "https://www.prado.com.sv/catalogsearch/result/?q={}".format(productSearch)
-    headers = {"user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.100.0"}
+    headers = {"user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (Klink, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.100.0"}
     res = requests.get(url, headers=headers)
     return url
+
+def searchProductTropigas(product):
+    product_search = urllib.parse.quote(product)
+    url = f"https://www.almacenestropigas.com/elsalvador/catalogsearch/result/index/?q={product_search}"
+    headers = {
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (Klink, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.100.0"
+    }
+    res = requests.get(url, headers=headers)
+    return res.text
+
+def searchProductCuracao(product):
+    product_search = urllib.parse.quote(product)
+    url = f"https://www.lacuracaonline.com/elsalvador/catalogsearch/result/?q={product_search}"
+    headers = {
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (Klink, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.100.0"
+    }
+    res = requests.get(url, headers=headers)
+    return res.text
 
 def GetContentListPrado(url, n):
     iSnull = 1
@@ -55,17 +72,8 @@ def GetContentListPrado(url, n):
             else:
                 driver.quit()
 
-def searchProductCuracao(product):
-    product_search = urllib.parse.quote(product)
-    url = f"https://www.lacuracaonline.com/elsalvador/catalogsearch/result/?q={product_search}"
-    headers = {
-        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.100.0"
-    }
-    res = requests.get(url, headers=headers)
-    return res.text
-
-def getContentCuracao(html, n):
-    soup = BeautifulSoup(html, 'html.parser')
+def getContentCuracao(url, n):
+    soup = BeautifulSoup(url, 'link.parser')
     productItems = soup.select('.product-item')
     store = "Curacao"
     f = 3
@@ -88,17 +96,8 @@ def getContentCuracao(html, n):
     else:
         return product_info
 
-def searchProductTropigas(product):
-    product_search = urllib.parse.quote(product)
-    url = f"https://www.almacenestropigas.com/elsalvador/catalogsearch/result/index/?q={product_search}"
-    headers = {
-        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.100.0"
-    }
-    res = requests.get(url, headers=headers)
-    return res.text
-
 def getContentTropigas(url, n):
-    soup = BeautifulSoup(url, 'html.parser')
+    soup = BeautifulSoup(url, 'link.parser')
     productItems = soup.select('.item.product.product-item')
     store = "Almacenes Tropigas"
     if not productItems:
@@ -125,7 +124,7 @@ def FillEmptyProdut(n, store):
         product_info.append({"name": "none", "newPrice": "none", "oldPrice": "none", "store": store})
     return product_info
 
-#search = "lavadora"
+search = "lavadora"
 quantity = 3
 product_info = []
 store = " "
@@ -135,12 +134,12 @@ linkPrado = SearchProducListPrado(search)
 GetContentListPrado(linkPrado, quantity)
 
 # Curacao
-htmlCuracao = searchProductCuracao(search)
-getContentCuracao(htmlCuracao, n=3)
+linkCuracao = searchProductCuracao(search)
+getContentCuracao(linkCuracao, quantity)
 
 # AlmacenTropigas
-htmlTropigas = searchProductTropigas(search)
-getContentTropigas(htmlTropigas, n=3)
+linkTropigas = searchProductTropigas(search)
+getContentTropigas(linkTropigas, quantity)
 
 # Create JSON
 CreateJson(product_info)
