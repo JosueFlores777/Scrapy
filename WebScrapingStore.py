@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import urllib.parse
 import json
+import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
